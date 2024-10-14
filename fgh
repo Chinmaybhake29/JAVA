@@ -1,0 +1,77 @@
+package D1;
+
+public class stack1 {
+	private int stack[], Maxsize,a;
+	private int stack1[], Maxsize1,b;
+	 
+	public void create_stack(int size,int size1) {
+		b=-1;
+		stack1=new int[size1];
+		Maxsize1=size1;
+		
+		a=-1;
+		stack=new int[size];
+		Maxsize=size;
+	}
+	void push(int e,int f) {
+		a++;
+		stack[a]=e;
+		System.out.println("Element "+e+ " Pushed:");
+		
+		b++;
+		stack[b]=f;
+		System.out.println("Element "+f+ " Pushed:");
+	}
+	boolean is_Full()
+	{
+		if(a==Maxsize-1)
+			return true;
+		else
+			return false;
+	}
+	boolean is_Full1()
+	{
+		if(b==Maxsize1-1)
+			return true;
+		else
+			return false;
+	}
+	int pop()
+	{
+		int temp=stack[a];
+		a--;
+		return(temp);
+	}
+	int pop1()
+	{
+		int temp=stack[b];
+		b--;
+		return(temp);
+	}
+	 boolean is_Empty() {
+	        if (a == -1)
+	            return true;
+	        else
+	            return false;
+	    }
+	 boolean is_Empty1() {
+	        if (b == -1)
+	            return true;
+	        else
+	            return false;
+	    }
+	int peek()
+	{
+		return(stack[a]);
+	}
+	int peek1()
+	{
+		return(stack[b]);
+	}
+	void print_Stack() {
+		System.out.println("Stacik Has");
+		for (int i = a; i >= 0; i--) {
+			System.out.println(stack[i]);
+		}
+	}
+}
